@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.hourtracker.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.hourtracker.entity.User">
+            <id property="id" column="id" />
+            <result property="user_name" column="user_name" />
+            <result property="avatar_url" column="avatar_url" />
+            <result property="password" column="password" />
+            <result property="phone" column="phone" />
+            <result property="email" column="email" />
+            <result property="user_status" column="user_status" />
+            <result property="create_time" column="create_time" />
+            <result property="isDelete" column="isDelete" />
+            <result property="user_Plus" column="user_Plus" />
+            <result property="user_id" column="user_id" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_name,avatar_url,password,phone,email,
+        user_status,create_time,isDelete,user_Plus,user_id
+    </sql>
+</mapper>

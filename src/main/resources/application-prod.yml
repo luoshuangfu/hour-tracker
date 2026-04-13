@@ -1,0 +1,11 @@
+server:
+  # 生产环境常用端口
+  port: 80
+
+spring:
+  datasource:
+    # 远程生产数据库地址
+    url: jdbc:mysql://10.0.0.5:3306/prod_db
+    username: admin
+    # 建议生产环境密码使用环境变量注入，而非明文
+    password: ${PROD_DB_PASSWORD}
