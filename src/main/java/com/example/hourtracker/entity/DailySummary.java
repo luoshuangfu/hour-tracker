@@ -45,7 +45,7 @@ public class DailySummary {
 
     @TableField("status")
     @Schema(description = "状态")
-    private DailySummaryStatus status;
+    private int status;
 
     @TableField("created_at")
     @Schema(description = "创建时间")

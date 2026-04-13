@@ -2,6 +2,8 @@ package com.example.hourtracker.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Data;
 
@@ -51,7 +53,7 @@ public class User {
     /**
      * 创建时间
      */
-    private Date create_time;
+    private LocalDateTime create_time;
 
     /**
      * 是否删除

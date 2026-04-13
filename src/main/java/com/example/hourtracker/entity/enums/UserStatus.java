@@ -3,10 +3,9 @@ package com.example.hourtracker.entity.enums;
 import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum DailySummaryStatus {
-    INIT(0,"未实现"),
-    GENERATED(1,"已创建");
-
+public enum UserStatus {
+    STAY(1,"正常"),
+    DELETED(0,"已注销");
     // 标记此字段为存入数据库的值
     @EnumValue
     private final int code;
@@ -15,9 +14,9 @@ public enum DailySummaryStatus {
     @JsonValue
     private final String description;
 
-    DailySummaryStatus(int code, String description) {
-        this.code=code;
-        this.description=description;
+    UserStatus(int code, String description) {
+        this.code = code;
+        this.description = description;
     }
 
     public int getCode() {

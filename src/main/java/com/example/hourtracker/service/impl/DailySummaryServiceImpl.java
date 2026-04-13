@@ -57,7 +57,7 @@ public class DailySummaryServiceImpl implements DailySummaryService {
     @Transactional
     public DailySummary generateAiSummaryIfAbsent(Long userId, LocalDate date) {
         DailySummary dailySummary = getOrCreateDailySummary(userId, date);
-        if (dailySummary.getStatus() == DailySummaryStatus.GENERATED
+        if (dailySummary.getStatus() == DailySummaryStatus.GENERATED.getCode()
                 && hasText(dailySummary.getAiSummary())
                 && hasText(dailySummary.getAiProblem())
                 && hasText(dailySummary.getAiSuggestion())) {
@@ -73,7 +73,7 @@ public class DailySummaryServiceImpl implements DailySummaryService {
         dailySummary.setAiSummary(aiSummaryResult.getSummary());
         dailySummary.setAiProblem(aiSummaryResult.getProblem());
         dailySummary.setAiSuggestion(aiSummaryResult.getSuggestion());
-        dailySummary.setStatus(DailySummaryStatus.GENERATED);
+        dailySummary.setStatus(DailySummaryStatus.GENERATED.getCode());
         dailySummary.setUpdatedAt(LocalDateTime.now(clock));
         dailySummaryMapper.updateById(dailySummary);
         return dailySummary;
@@ -103,7 +103,7 @@ public class DailySummaryServiceImpl implements DailySummaryService {
         DailySummary dailySummary = new DailySummary();
         dailySummary.setUserId(userId);
         dailySummary.setDate(date);
-        dailySummary.setStatus(DailySummaryStatus.INIT);
+        dailySummary.setStatus(DailySummaryStatus.INIT.getCode());
         dailySummary.setCreatedAt(now);
         dailySummary.setUpdatedAt(now);
         try {
